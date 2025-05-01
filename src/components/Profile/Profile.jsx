@@ -1,29 +1,33 @@
-export default function Profile() {
-    <div>
-  <div>
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-      alt="User avatar"
+import css from './Profile.module.css'
+
+export default function Profile({ name, tag, location, avatar, stats }) {
+    return (
+        <div className={css.profile}>
+  <div className={css.profileDescription}>
+    <img className={css.profileAvatar}
+      src={avatar}
+      alt={`${name} avatar`}
     />
-    <p>Petra Marica</p>
-    <p>@pmarica</p>
-    <p>Salvador, Brasil</p>
+    <p className={css.profileName}>{name}</p>
+    <p className={css.profileTag}>{tag}</p>
+    <p className={css.profileTag}>{location}</p>
   </div>
 
-  <ul>
+  <ul className={css.profileStats}>
     <li>
-      <span>Followers</span>
-      <span>1000</span>
+      <span className={css.label}>Followers</span>
+      <span className={css.quantity}>{stats.followers}</span>
     </li>
     <li>
-      <span>Views</span>
-      <span>2000</span>
+      <span className={css.label}>Views</span>
+      <span className={css.quantity}>{stats.views}</span>
     </li>
     <li>
-      <span>Likes</span>
-      <span>3000</span>
+      <span className={css.label}>Likes</span>
+      <span className={css.quantity}>{stats.likes}</span>
     </li>
   </ul>
 </div>
+ )
 
 }
