@@ -1,10 +1,11 @@
 import css from './App.module.css';
 import Profile from '../Profile/Profile'
 import FriendList from '../FriendList/FriendList'
+import TransactionHistory from '../TransactionHistory/TransactionHistory'
 
 import user from "../../userData.json";
 import friends from "../../friends.json";
-
+import items from "../../transactions.json";
 
 
 export default function App  ()  {
@@ -18,6 +19,7 @@ export default function App  ()  {
     stats={user.stats}
     />
       <FriendList friends={friends} />
+      <TransactionHistory items={items} />
     </div>
   );
 };
